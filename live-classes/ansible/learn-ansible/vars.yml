@@ -15,7 +15,7 @@
        msg: MESSAGE - {{ URL_PLAY }}
    - name: Print statement
      ansible.builtin.debug:
-       msg: "{{ URL_TASK }}"
+       msg: "{{ URL_PLAY }}"
    - name: Task variable
      ansible.builtin.debug:
         msg: URL_TASK - {{ URL_TASK }}
