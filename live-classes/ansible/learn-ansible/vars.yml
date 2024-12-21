@@ -24,5 +24,7 @@
    - name: Print statement from user runtime
      ansible.builtin.debug:
        msg: "{{ URL_RUN }}"       
+
+# ansible-playbook vars.yml -e "URL_RUN='I am printing this from my runtime'"       
     
    
