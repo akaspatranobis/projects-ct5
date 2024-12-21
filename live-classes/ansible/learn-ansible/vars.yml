@@ -21,9 +21,16 @@
         msg: URL_TASK - {{ URL_TASK }}
      vars:
         URL_TASK: tasks.example.com   
-   - name: Print statement from user runtime
-     ansible.builtin.debug:
-       msg: "{{ URL_RUN }}"       
+  #  - name: Print statement from user runtime
+  #    ansible.builtin.debug:
+  #      msg: "{{ URL_RUN }}" 
+   # Store result of a task, to OUTPUT variable
+   - name: demo
+      ansible.builtin.shell: uptime
+      register: OUTPUT 
+   - name: Print OUTPUT of previous task
+      ansible.builtin.debug:
+        msg: "{{ OUTPUT.stdout }}"          
 
 # ansible-playbook vars.yml -e "URL_RUN='I am printing this from my runtime'"       
     
