@@ -8,11 +8,18 @@
   hosts: localhost
   vars:
     URL_PLAY: I like my country
+    dev: abc 
   tasks:
    - name: Print statement
      ansible.builtin.debug:
        msg: MESSAGE - {{ URL_PLAY }}
    - name: Print statement
      ansible.builtin.debug:
-       msg: "{{ URL_PLAY }}"
+       msg: "{{ URL_TASK }}"
+   - name: Task variable
+     ansible.builtin.debug:
+        msg: URL_TASK - {{ URL_TASK }}
+     vars:
+        URL_TASK: tasks.example.com     
+    
    
