@@ -20,6 +20,9 @@
      ansible.builtin.debug:
         msg: URL_TASK - {{ URL_TASK }}
      vars:
-        URL_TASK: tasks.example.com     
+        URL_TASK: tasks.example.com   
+   - name: Print statement from user runtime
+     ansible.builtin.debug:
+       msg: "{{ URL_RUN }}"       
     
    
