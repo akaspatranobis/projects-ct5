@@ -5,3 +5,8 @@
       ansible.builtin.copy:
         src: expense.conf
         dest: /tmp/expense-copy.conf
+
+    - name: Template example.conf
+      ansible.builtin.template:
+        src: expense.conf
+        dest: /tmp/expense-template.conf       
