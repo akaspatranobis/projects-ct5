@@ -1,0 +1,4 @@
+- name: My First Role Demo
+  hosts: localhost
+  roles:
+   - demo
