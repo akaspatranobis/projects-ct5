@@ -8,21 +8,26 @@
     src: expense.conf
     dest: /etc/nginx/default.d/expense.conf
 
-- name: Clean the old Content
-  ansible.builtin.file:
-    path: "{{ app_loc }}"
-    state: absent
+- name: Import Application Common tasks
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: main.yml       
 
-- name: Create App Directory
-  ansible.builtin.file:
-    path: "{{ app_loc }}"
-    state: directory
+# - name: Clean the old Content
+#   ansible.builtin.file:
+#     path: "{{ app_loc }}"
+#     state: absent
 
-- name: Download and Extract App Content
-  ansible.builtin.unarchive:
-    src: https://expense-artifacts.s3.amazonaws.com/expense-{{ component }}-v2.zip
-    dest: "{{ app_loc }}"
-    remote_src: yes        
+# - name: Create App Directory
+#   ansible.builtin.file:
+#     path: "{{ app_loc }}"
+#     state: directory
+
+# - name: Download and Extract App Content
+#   ansible.builtin.unarchive:
+#     src: https://expense-artifacts.s3.amazonaws.com/expense-{{ component }}-v2.zip
+#     dest: "{{ app_loc }}"
+#     remote_src: yes        
 
 - name: Start Nginx Service
   ansible.builtin.systemd_service:
