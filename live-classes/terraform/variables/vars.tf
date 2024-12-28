@@ -43,6 +43,12 @@ output "env-name" {
     value = "Environment name - ${var.env}"
 }
 
+variable "tag" {}
+
+output "tag" {
+    value = var.tag
+}
+
 # 1. var.tf
 # 2. *.tfvars
 # 3. *.auto.tfvars
