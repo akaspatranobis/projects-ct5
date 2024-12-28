@@ -1,0 +1,29 @@
+resource "resourcename as defined by terraform" "local resource identification name" {
+    arguments .....
+}
+
+provider "providername as defined by terraform" {
+    arguments .....
+}
+
+provider "aws" {
+    region = "us-east-1"
+}
+
+
+resource "aws_s3_bucket" "example" {
+    ...
+}
+
+
+
+
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "5.74.0"
+    }
+  }
+}
+>=,<=,~
