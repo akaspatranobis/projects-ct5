@@ -6,7 +6,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "my-tf-test-bucketxxxaxaxaxaxasasas"
+    bucket = "my-tf-test-bucket-sdsvdshdsghdgsdgs-new"
     key    = "ram/mytffiles/terraform.tfstate"
     region = "us-east-1" 
 
