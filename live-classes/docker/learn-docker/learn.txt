@@ -95,6 +95,9 @@ Docker Compose Files --> Running multi Stack Docker conatiners
 These are simple YAML files
 
 docker run -it -d --name nginx4 -p 8085:80 app:v1
+docker run -it -d --name nginx4 -p 8085:80 app:v1
+docker run -it -d --name nginx4 -p 8085:80 app:v1
+docker run -it -d --name nginx4 -p 8085:80 app:v1
 
 version: '3' (optional)
 services:  -- stands for holding the entire stack of  the containers list
@@ -114,6 +117,8 @@ services:  -- stands for holding the entire stack of  the containers list
     volumes:
     - db_data:/app
     restart:  always
+   container n:
+    
 
 docker-compose.yaml  
 Only One command to start,stop, restart all containers (docker-compose up/down -d)
