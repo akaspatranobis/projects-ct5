@@ -3,3 +3,5 @@ RUN apt-get update
 RUN apt-get install nginx -y
 COPY index.nginx-debian.html /var/www/html
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
+
+#docker run -it --name nginxapp -p 8081:80 -d nginxweb:1
