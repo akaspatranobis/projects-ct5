@@ -1,0 +1,62 @@
+Dockerfile
+
+Dockerfile is a text document that contains all the commands a user could call on the command line to
+assemble an image. Using the docker build, users can create an automated build that executes several
+command line instructions in succession.
+
+
+FROM --> The
+FROM keyword is used to define the base image, on which we
+will be building. (FROM ubuntu:latest)
+
+Parent vs Base Image
+
+COPY 
+COPY  <source> <destination in container> { no remote download }
+
+ADD
+The
+ADD keyword is used to add files to the container being built. The
+syntax used is:
+ADD <source> <destination in container> { also work for remote place and download it}
+
+RUN
+The
+RUN keyword is used to add layers to the base image,
+by installing components. Each RUN statement adds a
+new layer to the docker image. 
+RUN apt-get update
+
+ENV
+The
+ENV keyword is used to define environment variables
+in the container runtime. ---> DB-HOST= datatbase address , CONFIG = java.xml
+
+EXPOSE PORTNUMBER --- it define which port u want ur conatiner to get the traffic 
+
+WORKDIR app - alternative of cd 
+MAKEDIR demo - mkdir
+
+ARGS  -- To define variables in your image 
+ARGS build_time_var="default_value"  /// ${variable name}
+
+CMD
+The
+CMD keyword is used to run commands on the start of the
+container. These commands run only when there is no argument
+specified while running the container. (app.jar  --> java app.jar // python3 app.py)
+
+
+ENTRYPOINT
+The
+ENTRYPOINT keyword is used strictly to run commands the
+moment the container initializes along with multiple arguments -- java app.jar --xms 20Gb
+
+
+========================================
+
+1. Dockerfile
+
+2. docker build . --tag   ---> This build or creates ur Docker Image
+
+3. docker run imagename ----> This will give ur image a life and start running the app u built as container
