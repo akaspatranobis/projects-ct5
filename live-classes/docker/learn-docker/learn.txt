@@ -118,7 +118,17 @@ services:  -- stands for holding the entire stack of  the containers list
     - db_data:/app
     restart:  always
    container n:
-    
+
 
 docker-compose.yaml  
 Only One command to start,stop, restart all containers (docker-compose up/down -d)
+
+
+
+===============
+
+How to make images lightwight ?
+
+1. Use lighter base images
+2. Use Multi Stage Docker images
+3. Combination of Both.
