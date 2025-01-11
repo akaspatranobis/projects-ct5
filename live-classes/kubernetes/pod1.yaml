@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: frontend
+    image: nginx
+    ports:
+    - containerPort: 80
+  - name: backend
+    image: python
+    ports:
+    - containerPort: 8080
