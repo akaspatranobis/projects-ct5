@@ -23,22 +23,22 @@ spec:
 
 ---
 
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    app: nginx
-  name: nginx
-  namespace: app-1
-spec:
-  ports:
-    - nodePort: 30007
-      port: 80
-      protocol: TCP
-      targetPort: 80
-  selector:
-    app: nginx
-  type: NodePort
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   labels:
+#     app: nginx
+#   name: nginx
+#   namespace: app-1
+# spec:
+#   ports:
+#     - nodePort: 30007
+#       port: 80
+#       protocol: TCP
+#       targetPort: 80
+#   selector:
+#     app: nginx
+#   type: NodePort
 
 ---
 
@@ -56,3 +56,21 @@ spec:
 #       targetPort: 80
 #   selector:
 #     app: nginx
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: nginx
+  name: nginx
+  namespace: app-1
+spec:
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 80
+  selector:
+    app: nginx
+  type: LoadBalancer  
