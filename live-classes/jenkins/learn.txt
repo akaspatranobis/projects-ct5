@@ -1,0 +1,45 @@
+pipeline {
+
+    agent 'slave1'/any
+
+    stages {
+        stage ('Git Clone') {
+            steps {
+                git clone https:
+            }
+        }
+
+        stage ('Run a Linux Command') {
+            steps {
+                mkdir deployment
+                cd deployment
+                touch a.java
+            }
+        }
+
+        stage ('Run a Linux Command1') {
+            steps {
+                mkdir deployment
+                cd deployment
+                touch a.java
+            }
+        }
+    }
+}
+
+------
+Jnekins Plugin for the Project.
+
+•	Eclipse Temurin installer
+•	Sonarqube Scanner
+•	NodeJs
+•	Docker
+•	Docker Commons
+•	Docker Pipeline
+•	Docker API
+•	Docker-build-step
+.   Terrafrom
+.   All Pipeline Plugins
+.   AWSCredentials
+.   Pipeline: AWS Steps
+.   Kubernetes All Plugins
